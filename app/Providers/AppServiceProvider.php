@@ -14,6 +14,7 @@ use App\Listeners\SendWalletFundedNotification;
 use App\Listeners\SendWelcomeMessage;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Events\Dispatcher;
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 
@@ -34,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
+    public function boot(UrlGenerator $url): void
     {
         //
         Dispatcher::macro('listeners', function ($events, array $listeners = []) {
@@ -59,5 +60,9 @@ class AppServiceProvider extends ServiceProvider
         Event::listen(
             NewBillsPayment::class, SendNewBillsPaymentNotification::class
         );
+
+        if (env('APP_ENV') == 'production') {
+            $url->forceScheme('https');
+        }
     }
 }

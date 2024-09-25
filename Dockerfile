@@ -33,7 +33,7 @@ ENV LOG_DEPRECATIONS_CHANNEL=null
 ENV LOG_LEVEL=debug
 
 ENV DB_CONNECTION=pgsql
-ENV DB_HOST=postgresql://min_billz_db_user:NxLpdKHLyalCCfZ6FQTdXslD9S2dzemO@dpg-crpv3obv2p9s738d053g-a/min_billz_db
+ENV DB_HOST=postgresql://min_billz_db_user:NxLpdKHLyalCCfZ6FQTdXslD9S2dzemO@dpg-crpv3obv2p9s738d053g-a.oregon-postgres.render.com/min_billz_db
 ENV DB_PORT=5432
 ENV DB_DATABASE=min_billz_db
 ENV DB_USERNAME=min_billz_db_user

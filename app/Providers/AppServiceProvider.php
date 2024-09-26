@@ -16,6 +16,7 @@ use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -60,6 +61,8 @@ class AppServiceProvider extends ServiceProvider
         Event::listen(
             NewBillsPayment::class, SendNewBillsPaymentNotification::class
         );
+
+        Schema::defaultStringLength(191);
 
         if (env('APP_ENV') == 'production') {
             $url->forceScheme('https');

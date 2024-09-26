@@ -15,7 +15,7 @@ ENV APP_ENV=local
 ENV APP_KEY=base64:ptdG0XXzacjXpfs836FUVgZcBLbss3MCC1WZwmERVhU=
 ENV APP_DEBUG=true
 ENV APP_TIMEZONE=UTC
-ENV APP_URL=http://localhost:1211
+ENV APP_URL=https://min-billz.onrender.com
 ENV APP_CODE=MNB
 
 ENV APP_LOCALE=en
